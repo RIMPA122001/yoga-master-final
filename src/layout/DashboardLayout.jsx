@@ -16,6 +16,8 @@ import { TbBrandAppleArcade } from 'react-icons/tb';
 import { useAuth } from '../hooks/useAuth';
 import { HashLoader } from 'react-spinners';
 import Swal from 'sweetalert2';
+//import yoga from "../../public/yoga-logo.jpg";
+
 const adminNavItems = [
     { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
     { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Manage Users" },
@@ -100,7 +102,7 @@ const DashboardLayout = () => {
             >
                 <div className="flex gap-x-4 items-center">
                     <img
-                        src='/yoga-logo.png'
+                        src='\yoga-logo.jpg'
                         onClick={() => setOpen(!open)}
                         className={`cursor-pointer h-[40px] duration-500 ${open && "rotate-[360deg]"
                             }`}

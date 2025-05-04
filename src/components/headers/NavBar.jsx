@@ -135,8 +135,8 @@ const NavBar = () => {
                     {/* Logo */}
                     <div onClick={() => navigate('/')} className="flex-shrink-0 cursor-pointer pl-7 md:p-0 flex items-center">
                         <div className={``}>
-                            <h1 className='text-2xl font-Cinzel  inline-flex gap-3  items-center font-bold'>YogaMaster <img src="/yoga-logo.png" alt="" className='w-8 h-8' /></h1>
-                            <p className='font-bold text-[13px]  tracking-[8px]'>Quick Explore</p>
+                            <h1 className='text-2xl font-Cinzel  inline-flex gap-3  items-center font-bold'>YogaHeaven <img src="/yoga-logo.jpg" alt="" className='w-8 h-8' /></h1>
+                            <p className='font-bold text-[13px]  tracking-[8px]'>Online Yoga</p>
                         </div>
                     </div>
 
@@ -260,3 +260,228 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useContext, useEffect, useState } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { FaBars } from 'react-icons/fa';
+// import Swal from 'sweetalert2';
+// import Switch from '@mui/material/Switch';
+// import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+// import { AuthContext } from '../../utilities/providers/AuthProvider';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+// const navLinks = [
+//     { name: 'Home', route: '/' },
+//     { name: 'Instructors', route: '/instructors' },
+//     { name: 'Classes', route: '/classes' },
+// ];
+
+// const theme = createTheme({
+//     palette: {
+//         primary: { main: '#ff0000' },
+//         secondary: { main: '#00ff00' },
+//     },
+// });
+
+// const NavBar = () => {
+//     const navigate = useNavigate();
+//     const location = useLocation();
+//     const { user, logout } = useContext(AuthContext);
+
+//     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+//     const [isHome, setIsHome] = useState(false);
+//     const [isLogin, setIsLogin] = useState(false);
+//     const [scrollPosition, setScrollPosition] = useState(0);
+//     const [navBg, setNavBg] = useState('bg-[#15151580]');
+//     const [isFixed, setIsFixed] = useState(false);
+//     const [isDarkMode, setIsDarkMode] = useState(false);
+
+//     const toggleMobileMenu = () => {
+//         setIsMobileMenuOpen(prev => !prev);
+//     };
+
+//     const handleLogout = (e) => {
+//         e.preventDefault();
+//         Swal.fire({
+//             title: 'Are you sure to logout?',
+//             text: "You won't be able to revert this!",
+//             icon: 'warning',
+//             showCancelButton: true,
+//             confirmButtonColor: '#3085d6',
+//             cancelButtonColor: '#d33',
+//             confirmButtonText: 'Yes, Logout!',
+//         }).then((result) => {
+//             if (result.isConfirmed) {
+//                 logout()
+//                     .then(() => {
+//                         Swal.fire('Logged out!', 'You have been logged out.', 'success');
+//                     })
+//                     .catch(err => {
+//                         Swal.fire('Error!', err.message, 'error');
+//                     });
+//             }
+//         });
+//     };
+
+//     useEffect(() => {
+//         document.documentElement.classList.toggle('dark', isDarkMode);
+//     }, [isDarkMode]);
+
+//     useEffect(() => {
+//         setIsHome(location.pathname === '/');
+//         setIsLogin(location.pathname === '/login');
+//         setIsFixed(location.pathname === '/register' || location.pathname === '/login');
+//     }, [location]);
+
+//     useEffect(() => {
+//         const handleScroll = () => setScrollPosition(window.pageYOffset);
+//         window.addEventListener('scroll', handleScroll);
+//         return () => window.removeEventListener('scroll', handleScroll);
+//     }, []);
+
+//     useEffect(() => {
+//         if (scrollPosition > 100) {
+//             setNavBg(isHome
+//                 ? 'bg-white backdrop-filter backdrop-blur-xl bg-opacity-0 dark:bg-black dark:text-white text-black'
+//                 : 'bg-white dark:bg-black dark:text-white text-black');
+//         } else {
+//             setNavBg(`${isHome ? 'bg-transparent' : 'bg-white dark:bg-black'} dark:text-white text-white`);
+//         }
+//     }, [scrollPosition, isHome, location.pathname]);
+
+//     const navLinkClass = (isActive) =>
+//         `font-bold ${isActive ? 'text-secondary' : navBg.includes('bg-transparent') ? 'text-white' : 'text-black dark:text-white'} hover:text-secondary duration-300`;
+
+//     return (
+//         <ThemeProvider theme={theme}>
+//             <motion.nav
+//                 className={`${isHome ? navBg : 'bg-white dark:bg-black backdrop-blur-2xl'} ${isFixed ? 'static' : 'fixed'} top-0 transition-colors duration-500 w-full z-10`}
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: 1 }}
+//                 transition={{ duration: 0.5 }}
+//             >
+//                 <div className="lg:w-[95%] mx-auto px-4">
+//                     <div className="flex items-center justify-between py-4">
+//                         {/* Logo */}
+//                         <div onClick={() => navigate('/')} className="cursor-pointer flex items-center gap-2">
+//                             <h1 className="text-2xl font-bold inline-flex items-center gap-2 font-Cinzel">
+//                                 YogaMaster <img src="/yoga-logo.jpg" alt="Logo" className="w-8 h-8" />
+//                             </h1>
+//                             <p className="text-[13px] tracking-[8px] font-bold">Quick Explore</p>
+//                         </div>
+
+//                         {/* Mobile Menu Icon */}
+//                         <div className="md:hidden">
+//                             <button onClick={toggleMobileMenu} className="text-gray-300 hover:text-white">
+//                                 <FaBars className="h-6 w-6 hover:text-primary" />
+//                             </button>
+//                         </div>
+
+//                         {/* Desktop Navigation */}
+//                         <div className="hidden md:block">
+//                             <ul className="flex items-center space-x-4">
+//                                 {navLinks.map((link) => (
+//                                     <li key={link.route}>
+//                                         <NavLink to={link.route} className={({ isActive }) => navLinkClass(isActive)}>
+//                                             {link.name}
+//                                         </NavLink>
+//                                     </li>
+//                                 ))}
+//                                 {!user && (
+//                                     <li>
+//                                         <NavLink to={isLogin ? '/register' : '/login'} className={({ isActive }) => navLinkClass(isActive)}>
+//                                             {isLogin ? 'Register' : 'Login'}
+//                                         </NavLink>
+//                                     </li>
+//                                 )}
+//                                 {user && (
+//                                     <>
+//                                         <li>
+//                                             <NavLink to="/dashboard" className={({ isActive }) => navLinkClass(isActive)}>
+//                                                 Dashboard
+//                                             </NavLink>
+//                                         </li>
+//                                         <li>
+//                                             <img src={user?.photoURL} alt="User" className="h-10 w-10 rounded-full" />
+//                                         </li>
+//                                         <li>
+//                                             <button onClick={handleLogout} className="font-bold px-3 py-2 bg-secondary text-white rounded-xl">
+//                                                 Logout
+//                                             </button>
+//                                         </li>
+//                                     </>
+//                                 )}
+//                                 <li>
+//                                     <div className="flex flex-col items-center">
+//                                         <Switch onChange={() => setIsDarkMode(!isDarkMode)} />
+//                                         <span className="text-xs">Light/Dark</span>
+//                                     </div>
+//                                 </li>
+//                             </ul>
+//                         </div>
+//                     </div>
+
+//                     {/* Mobile Menu */}
+//                     <AnimatePresence>
+//                         {isMobileMenuOpen && (
+//                             <motion.ul
+//                                 className="md:hidden mt-2 w-full bg-black space-y-2 py-2 px-4"
+//                                 initial={{ opacity: 0, height: 0 }}
+//                                 animate={{ opacity: 1, height: 'auto' }}
+//                                 exit={{ opacity: 0, height: 0 }}
+//                                 transition={{ duration: 0.5 }}
+//                             >
+//                                 {navLinks.map((link) => (
+//                                     <li key={link.route}>
+//                                         <NavLink to={link.route} className={({ isActive }) => navLinkClass(isActive)}>
+//                                             {link.name}
+//                                         </NavLink>
+//                                     </li>
+//                                 ))}
+//                                 {!user && (
+//                                     <li>
+//                                         <NavLink to={isLogin ? '/register' : '/login'} className={({ isActive }) => navLinkClass(isActive)}>
+//                                             {isLogin ? 'Register' : 'Login'}
+//                                         </NavLink>
+//                                     </li>
+//                                 )}
+//                                 {user && (
+//                                     <>
+//                                         <li>
+//                                             <NavLink to="/dashboard" className={({ isActive }) => navLinkClass(isActive)}>
+//                                                 Dashboard
+//                                             </NavLink>
+//                                         </li>
+//                                         <li>
+//                                             <img src={user?.photoURL} alt="User" className="h-10 w-10 rounded-full" />
+//                                         </li>
+//                                         <li>
+//                                             <button onClick={handleLogout} className="font-bold px-3 py-2 bg-secondary text-white rounded-xl">
+//                                                 Logout
+//                                             </button>
+//                                         </li>
+//                                     </>
+//                                 )}
+//                             </motion.ul>
+//                         )}
+//                     </AnimatePresence>
+//                 </div>
+//             </motion.nav>
+//         </ThemeProvider>
+//     );
+// };
+
+// export default NavBar;

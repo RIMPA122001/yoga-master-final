@@ -1,8 +1,8 @@
 import React from 'react';
-import banner2 from "../../../assets/home/banner-2.jpg"
+import bgImg2 from "../../../assets/home/banner-2.jpg"
 const Hero2 = () => {
     return (
-        <div className='min-h-screen  bg-cover' style={{ backgroundImage:  `url(${banner2})` }}>
+        <div className='min-h-screen  bg-cover' style={{ backgroundImage:  `url(${bgImg2})` }}>
             <div className="min-h-screen flex justify-start pl-11 text-white items-center bg-black bg-opacity-60">
                 <div className="">
                     <div className="space-y-4">

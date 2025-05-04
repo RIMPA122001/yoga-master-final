@@ -6,10 +6,12 @@ const Hero = () => {
             <div className="min-h-screen flex justify-start pl-11 text-white items-center bg-black bg-opacity-60">
                 <div className="">
                     <div className="space-y-4">
-                        <h3 className='md:text-4xl text-2xl'>WE PROVIDES</h3>
+                        <h3 className='md:text-4xl text-2xl'>WE PROVIDE</h3>
                         <h1 className='md:text-7xl text-4xl font-bold '>Best Yoga Online</h1>
                         <div className="md:w-1/2">
-                            <p className=''>Offered chiefly farther of my no colonel shyness. Such on help ye some door if in. Laughter proposal laughing any son law consider.</p>
+                            <p className=''>Offering healthy life-style courses for everyone, in today's
+                  busy life. Our mentors will guide you to achieve your health
+                  goals and help you to live a happy life.</p>
                         </div>
                         <div className="flex flex-wrap items-center gap-5">
                             <button className='px-7 py-3 rounded-lg bg-secondary font-bold uppercase'>Join Today</button>
