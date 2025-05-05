@@ -22,14 +22,14 @@ const adminNavItems = [
     { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
     { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Manage Users" },
     { to: "/dashboard/manage-class", icon: <BsFillPostcardFill className="text-2xl" />, label: "Manage Class" },
-    { to: "/dashboard/manage-applications", icon: <TbBrandAppleArcade className="text-2xl" />, label: "Applications" },
+    //{ to: "/dashboard/manage-applications", icon: <TbBrandAppleArcade className="text-2xl" />, label: "Applications" },
 ];
 const instructorNavItem = [
     { to: "/dashboard/instructor-cp", icon: <FaHome className="text-2xl" />, label: "Home" },
     { to: "/dashboard/add-class", icon: <MdExplore className="text-2xl" />, label: "Add A class" },
     { to: "/dashboard/my-classes", icon: <IoSchoolSharp className="text-2xl" />, label: "My Classes" },
-    { to: "/dashboard/my-pending", icon: <MdPendingActions className="text-2xl" />, label: "Pending Classes" },
-    { to: "/dashboard/my-approved", icon: <IoMdDoneAll className="text-2xl" />, label: "Approved Classes" },
+    //{ to: "/dashboard/my-pending", icon: <MdPendingActions className="text-2xl" />, label: "Pending Classes" },
+    //{ to: "/dashboard/my-approved", icon: <IoMdDoneAll className="text-2xl" />, label: "Approved Classes" },
 ];
 const student = [
     { to: "/dashboard/student-cp", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard" },
@@ -41,8 +41,8 @@ const student = [
 const lastMenuItems = [
     { to: "/", icon: <BiHomeAlt className="text-2xl" />, label: "Main Home" },
     // { to: "/browse", icon: <MdExplore className="text-2xl" />, label: "Browse" },
-    { to: "/trending", icon: <MdOfflineBolt className="text-2xl" />, label: "Trending" },
-    { to: "/browse", icon: <GiFigurehead className="text-2xl" />, label: "Following" },
+    //{ to: "/trending", icon: <MdOfflineBolt className="text-2xl" />, label: "Trending" },
+    //{ to: "/browse", icon: <GiFigurehead className="text-2xl" />, label: "Following" },
 ];
 
 

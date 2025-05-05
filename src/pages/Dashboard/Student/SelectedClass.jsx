@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
 import { Pagination, ThemeProvider, createTheme } from '@mui/material';
 import { ScaleLoader } from 'react-spinners';
+import { FaRupeeSign } from "react-icons/fa";
 
 const SelectedClass = () => {
     useTitle('Selected Class | Yoga Master Selected Class');
@@ -133,7 +134,7 @@ const SelectedClass = () => {
                                                                 <span className={`font-semibold ${item.name.length > 20 ? 'text-[13px]' : 'text-[18px]'} whitespace-pre-wrap`}>{item.name}</span>
                                                             </div>
                                                         </td>
-                                                        <td className="py-4">${item.price}</td>
+                                                        <td className="py-4">₹{item.price}</td>
                                                         <td className="py-4">
                                                             <p className='text-green-700 text-sm'>{moment(item.submitted).format('MMMM Do YYYY')}</p>
                                                         </td>
@@ -152,7 +153,7 @@ const SelectedClass = () => {
                                                                 className='px-3 py-1 cursor-pointer bg-green-500 rounded-3xl text-white font-bold flex items-center'
                                                                 onClick={() => handlePay(item._id)}
                                                             >
-                                                                <FiDollarSign className="mr-2" />
+                                                                <FaRupeeSign className="mr-2" />
                                                                 Pay
                                                             </motion.button>
 
@@ -172,7 +173,7 @@ const SelectedClass = () => {
                                 <h2 className="text-lg font-semibold mb-4">Summary</h2>
                                 <div className="flex justify-between mb-2">
                                     <span>Subtotal</span>
-                                    <span>${totalPrice}</span>
+                                    <span>₹{totalPrice}</span>
                                 </div>
                                 <div className="flex justify-between mb-2">
                                     <span>Taxes</span>
@@ -182,12 +183,12 @@ const SelectedClass = () => {
                                 </div>
                                 <div className="flex justify-between mb-2">
                                     <span>Extra Fees</span>
-                                    <span>$0</span>
+                                    <span>₹0</span>
                                 </div>
                                 <hr className="my-2" />
                                 <div className="flex justify-between mb-2">
                                     <span className="font-semibold">Total</span>
-                                    <span className="font-semibold">${price.toFixed(2)}</span>
+                                    <span className="font-semibold">₹{price.toFixed(2)}</span>
                                 </div>
                                 <motion.button
                                     whileHover={{ scale: 1.1 }}

@@ -281,7 +281,7 @@ const SingleClass = () => {
                         <img src="/play.png" alt="" />
                       </div>
                     </a>
-                    <h3>${course.price}</h3>
+                    <h3>₹{course.price}</h3>
                     <button onClick={() => handelSelect(course._id)} title={role === 'admin' || role === 'instructor' ? 'Instructor/Admin Can not be able to select ' ? course.availableSeats <1 : 'No seat avalible' : 'You can select this classes' } disabled={role === 'admin' || role === 'instructor' || course.availableSeats < 1}  className="btn btn-primary w-full text-center bg-secondary py-2 px-6 text-white ">
                       Enroll Now
                     </button>

@@ -101,6 +101,17 @@ export const router = createBrowserRouter([
                 path: 'my-classes',
                 element: <InstructorRoute><MyClasses /></InstructorRoute>
             },
+
+
+
+
+
+            
+
+
+
+
+
             {
                 path: 'update/:id',
                 element: <InstructorRoute><UpdateClass /></InstructorRoute>,
